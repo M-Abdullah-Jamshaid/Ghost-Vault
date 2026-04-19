@@ -29,27 +29,26 @@
 ## 🛠️ Prerequisites & Installation
 
 Since Ghost-Vault interacts deeply with the Windows OS (Clipboard APIs and VBScript execution), it is strictly built for **Windows Environments**.
-
-**1. Clone the repository:**
+### 1 Clone the Repository  
 ```bash
-git clone [https://github.com/M-Abdullah-Jamshaid/Ghost-Vault.git](https://github.com/M-Abdullah-Jamshaid/Ghost-Vault.git)
+git clone https://github.com/M-Abdullah-Jamshaid/Ghost-Vault.git
 cd Ghost-Vault
-2. Install required dependencies:
 
-Bash
+** 2. Install required dependencies:**
 pip install pywin32 cryptography getmac
-3. Initializing the Vault:
 
-Bash
+**3 Initialize the Vault**
 python ghost.py
-(On the very first launch, the system will bind to your hardware and prompt you to create a Master Password. This password will generate your AES-256 keys).
+
+pip install pywin32 cryptography getmac
 
 🚀 Building the Standalone Executable (Recommended)
 To deploy Ghost-Vault as a standalone, immortal background application, compile it using PyInstaller:
 
-Bash
+
 pip install pyinstaller
 pyinstaller --onefile --uac-admin ghost.py
+
 Run the generated ghost.exe from the dist folder. After deploying a Nuclear Sentry, you can safely close the terminal; the protection will persist in the Windows background.
 
 🛡️ Usage Modules
@@ -64,8 +63,9 @@ Select any image file. The system will scramble the binary data using your Maste
 [3] Decrypt Image
 Select an encrypted image. This will trigger the Ghost Authentication GUI. Enter your Master Password. If correct, the image is restored; if incorrect, access is aggressively denied.
 <div align="center">
-<b>Developed with ⚡ by Abdullah Jamshaid</b>
 
+Developed with ⚡ by Abdullah Jamshaid
 
-<i>For educational and defensive cybersecurity purposes.</i>
-</div>
+For educational and defensive cybersecurity purposes only
+
+</div> ```
