@@ -1,0 +1,13 @@
+# Python caches
+__pycache__/
+*.py[cod]
+
+# Build folders
+build/
+dist/
+*.spec
+
+# GHOST-VAULT Private Data (DO NOT UPLOAD THESE)
+ghost_config.json
+launch.vbs
+ghost_debug_log.txt
