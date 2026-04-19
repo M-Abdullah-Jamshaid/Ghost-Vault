@@ -1,51 +1,71 @@
 # ☠️ GHOST-VAULT: Advanced Cryptographic Sentry
 
-> **An advanced, hardware-bound Data Loss Prevention (DLP) and Encryption tool for Windows.**
+![Platform](https://img.shields.io/badge/Platform-Windows-blue?style=for-the-badge&logo=windows)
+![Python](https://img.shields.io/badge/Python-3.8%2B-green?style=for-the-badge&logo=python)
+![Encryption](https://img.shields.io/badge/Encryption-AES--256-red?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-lightgrey?style=for-the-badge)
 
-Ghost-Vault is a standalone Python security tool designed to protect highly sensitive directories and images. It features AES-256 encryption, MAC address hardware binding, and a detached, immortal background sentry process that actively monitors the system clipboard for unauthorized data extraction.
+> **An aggressive, hardware-bound Data Loss Prevention (DLP) and File Encryption tool designed for Windows.**
 
-## ✨ Features
-* **Hardware Binding:** Locks the cryptographic keys to the physical machine's MAC address on the first run.
-* **Immortal Sentry Process:** Uses VBScript detachment to keep monitoring the clipboard even if the main terminal is closed.
-* **Nuclear Mode:** Instantly and silently deletes the protected folder if an unauthorized copy attempt is detected.
-* **Hacker-Themed GUI:** Features an interactive, cyberpunk-styled `tkinter` authentication popup for decryption and timer-based challenges.
-* **File & Folder Encryption:** Uses PBKDF2HMAC and AES-256 (Fernet) to completely scramble images and directories.
+**Ghost-Vault** is a standalone Python security utility designed to protect highly sensitive directories and images. It features Military-Grade AES-256 encryption, MAC address hardware binding, and a detached **Immortal Background Sentry** that actively monitors the system clipboard to prevent unauthorized data extraction.
 
-## ⚠️ Disclaimer
-**WARNING:** The "Nuclear Mode" utilizes `shutil.rmtree` to permanently delete files without sending them to the Recycle Bin. This is an aggressive DLP tool. **Do not test this on critical or unbacked-up data.** The author is not responsible for any accidental data loss.
+---
 
-## 🛠️ Prerequisites
-* Python 3.8+
-* Windows OS (Required for Win32 API clipboard monitoring and VBScript detachment)
+## ✨ Core Features
 
-## 🚀 Installation & Setup
+* 🔒 **Hardware Binding (HWID Lock):** On the first run, the system generates cryptographic keys locked to the physical machine's MAC address. The vault cannot be opened on an unauthorized PC.
+* 👻 **Immortal Sentry Process:** Uses advanced VBScript injection to detach the background monitoring process. **Even if the main terminal is closed, the Ghost Sentry remains active in the background.**
+* ☢️ **Nuclear Protocol (Anti-Copy):** Actively monitors the Windows clipboard. If an unauthorized user attempts to copy the protected folder (`Ctrl+C`), the Sentry instantly and silently wipes the data from the hard drive.
+* 🖼️ **Image Cryptography:** Secure individual images using PBKDF2HMAC and AES-256 (Fernet) encryption. Unreadable to any image viewer until decrypted.
+* 💻 **Cyberpunk Hacker GUI:** Features interactive, custom-built `tkinter` authentication popups with flashing alerts and neon interfaces for decryption challenges.
 
-1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/YOUR_USERNAME/Ghost-Vault.git](https://github.com/YOUR_USERNAME/Ghost-Vault.git)
+---
 
+## ⚠️ CRITICAL DISCLAIMER
+**WARNING:** The "Nuclear Sentry" module utilizes `shutil.rmtree` to permanently delete files bypassing the Recycle Bin. This is an aggressive defensive tool. **Do not test this on critical or unbacked-up data.** The developer is not responsible for any accidental data loss.
+
+---
+
+## 🛠️ Prerequisites & Installation
+
+Since Ghost-Vault interacts deeply with the Windows OS (Clipboard APIs and VBScript execution), it is strictly built for **Windows Environments**.
+
+**1. Clone the repository:**
+```bash
+git clone [https://github.com/M-Abdullah-Jamshaid/Ghost-Vault.git](https://github.com/M-Abdullah-Jamshaid/Ghost-Vault.git)
 cd Ghost-Vault
-Install dependencies:
+2. Install required dependencies:
 
 Bash
-pip install -r requirements.txt
-Run the Initialization Protocol:
+pip install pywin32 cryptography getmac
+3. Initializing the Vault:
 
 Bash
 python ghost.py
-On the first run, the system will bind to your hardware and prompt you to create a Master Sentry Password.
+(On the very first launch, the system will bind to your hardware and prompt you to create a Master Password. This password will generate your AES-256 keys).
 
-💻 Building the Executable
-To deploy this as a standalone, immortal background application, compile it using PyInstaller:
+🚀 Building the Standalone Executable (Recommended)
+To deploy Ghost-Vault as a standalone, immortal background application, compile it using PyInstaller:
 
 Bash
 pip install pyinstaller
 pyinstaller --onefile --uac-admin ghost.py
-(Run the generated ghost.exe from the dist folder. You can safely close the terminal after deploying a Sentry; it will persist in the background).
+Run the generated ghost.exe from the dist folder. After deploying a Nuclear Sentry, you can safely close the terminal; the protection will persist in the Windows background.
 
 🛡️ Usage Modules
-[1] Deploy Nuclear Sentry: Select a folder to hide, encrypt, and actively guard against copying.
+Upon launching, the graphical terminal will present you with the following modules:
 
-[2] Encrypt Image: Select a single image to lock with AES-256.
+[1] Deploy Nuclear Sentry (Folder Protection)
+Select a directory via the UI picker. The system will encrypt the files, hide the folder at the OS level (+s +h), and detach the immortal background sentry. If anyone attempts to copy this folder, it will trigger the Nuclear Wipe.
 
-[3] Decrypt Image: Unlocks a secured image (Triggers the Hacker Authentication GUI).
+[2] Encrypt Image
+Select any image file. The system will scramble the binary data using your Master Password, making it completely unviewable and secure against unauthorized access.
+
+[3] Decrypt Image
+Select an encrypted image. This will trigger the Ghost Authentication GUI. Enter your Master Password. If correct, the image is restored; if incorrect, access is aggressively denied.
+<div align="center">
+<b>Developed with ⚡ by Abdullah Jamshaid</b>
+
+
+<i>For educational and defensive cybersecurity purposes.</i>
+</div>
